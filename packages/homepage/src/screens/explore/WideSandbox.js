@@ -22,11 +22,21 @@ export default class WideSandbox extends React.PureComponent {
     imageLoaded: false,
   };
 
-  getTitle = () =>
-    this.props.sandbox.picks[0].title || this.props.sandbox.title;
+  getTitle = () => {
+    if ((this.props.sandbox.picks || []).length !== 0) {
+      return this.props.sandbox.picks[0].title;
+    }
 
-  getDescription = () =>
-    this.props.sandbox.picks[0].description || this.props.sandbox.description;
+    return this.props.sandbox.title;
+  };
+
+  getDescription = () => {
+    if ((this.props.sandbox.picks || []).length !== 0) {
+      return this.props.sandbox.picks[0].description;
+    }
+
+    return this.props.sandbox.description;
+  };
 
   toggleOpen = () => {
     this.props.pickSandbox({
@@ -56,7 +66,6 @@ export default class WideSandbox extends React.PureComponent {
         </Container>
       );
     }
-
     const template = getTemplate(sandbox.template);
     const Icon = getIcon(sandbox.template);
 
