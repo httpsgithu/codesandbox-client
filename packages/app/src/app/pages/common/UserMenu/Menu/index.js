@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import UserIcon from 'react-icons/lib/ti/user';
 import ExitIcon from 'react-icons/lib/md/exit-to-app';
@@ -54,7 +55,13 @@ function Menu({
       {curator && (
         <Item as={Link} to={curatorUrl()}>
           <Icon>
-            <span css={{ width: 14 }} role="img" aria-label="Star">
+            <span
+              css={`
+                width: 14px;
+              `}
+              role="img"
+              aria-label="Star"
+            >
               ✨
             </span>
           </Icon>
@@ -64,7 +71,13 @@ function Menu({
 
       <Item as={Link} to={patronUrl()}>
         <Icon>
-          <PatronBadge style={{ width: 24, margin: '-6px -5px' }} size={24} />
+          <PatronBadge
+            css={`
+              width: 24px;
+              margin: -6px -5px;
+            `}
+            size={24}
+          />
         </Icon>
         Patron Page
       </Item>
