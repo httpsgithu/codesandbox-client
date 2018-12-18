@@ -3,13 +3,13 @@ import React from 'react';
 import Feature from './Feature';
 
 import { Title } from '../elements';
-import { Container, CenteredHeader } from './elements';
+import { Container, CenteredHeader, Table } from './elements';
 
 function PricingInfo() {
   return (
     <Container>
       <Title>Lifted Limits</Title>
-      <table style={{ borderCollapse: 'collapse' }}>
+      <Table>
         <thead>
           <tr>
             <th />
@@ -31,7 +31,7 @@ function PricingInfo() {
             supporter="500Mb"
           />
         </tbody>
-      </table>
+      </Table>
     </Container>
   );
 }

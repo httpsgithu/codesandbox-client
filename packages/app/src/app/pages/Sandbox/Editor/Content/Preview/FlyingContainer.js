@@ -306,23 +306,21 @@ class FlyingContainer extends React.Component<Props, State> {
         }
       >
         <div
-          style={{
-            position: 'absolute',
-            right: '.5rem',
-            top: '.5rem',
-            bottom: '.5rem',
-
-            overflow: 'hidden',
-            borderRadius: '4px',
-            width: width || '50%',
-            flex: width ? `0 0 ${width}px` : undefined,
-            height,
-            boxShadow: hide ? 'none' : '0 3px 8px rgba(0, 0, 0, 0.5)',
-            zIndex: 2,
-
-            visiblity: hide ? 'hidden' : undefined,
-            pointerEvents: hide ? 'none' : undefined,
-          }}
+          className={`
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            overflow: hidden;
+            border-radius: 4px;
+            width: ${width || '50%'};
+            flex: ${width ? `0 0 ${width}px` : ''};
+            height: ${height};
+            box-shadow: ${hide ? 'none' : '0 3px 8px rgba(0, 0, 0, 0.5)'};
+            z-index: 2;
+            visiblity: ${hide ? 'hidden' : ''};
+            pointer-events: ${hide ? 'none' : ''};
+          `}
           ref={this.updateBounds}
         >
           <TopResizer
